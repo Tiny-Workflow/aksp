@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Plate — Aao Kabhi Stall Pe!</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">YOUR PLATE, YOUR RULES ✳ ORDER CHECK!</div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-icon">🌶️</span><span>Aao Kabhi<br><b>Stall Pe!</b></span></a>
+    <nav class="navigation">
+      <a href="index.html">Home</a><a href="menu.html">Menu</a>
+      <a href="story.html">Our Story</a><a href="team.html">Team</a>
+    </nav>
+    <a class="cart-link active-cart" href="cart.html">My Plate <span class="cart-count">0</span> 🛒</a>
+  </header>
+
+  <main>
+    <section class="page-banner banner-yellow cart-banner">
+      <span class="eyebrow">ORDER CHECK ✳ NO SURPRISES</span>
+      <h1>My <span>Plate.</span></h1>
+      <p>Sab kuch check karo. Quantity badlo. Total dekho.</p>
+      <div class="banner-doodle">🛒 🍪 🍟</div>
+    </section>
+
+    <section class="section cart-section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">YOUR SELECTED TREATS</span>
+          <h2>What's on<br><span>the plate?</span></h2>
+        </div>
+        <a class="text-link" href="menu.html">+ Add more</a>
+      </div>
+
+      <div id="cart-empty" class="empty-cart" hidden>
+        <div class="empty-cart-emoji">🍽️</div>
+        <h2>Arre, plate toh khaali hai!</h2>
+        <p>Abhi tak kuch add nahi kiya. Chalo, kuch tasty choose karo.</p>
+        <a class="button button-red" href="menu.html">Explore the Menu →</a>
+      </div>
+
+      <div id="cart-summary">
+        <div id="cart-items" class="cart-items"></div>
+
+        <div class="cart-total-card">
+          <div class="total-copy">
+            <span class="eyebrow">THE DAMAGE 💸</span>
+            <h2>Grand total</h2>
+            <p>Final total for all the items you've selected.</p>
+          </div>
+          <div class="total-amount" id="cart-total">₹0</div>
+        </div>
+
+        <div class="cart-actions">
+          <a class="button button-light" href="menu.html">← Back to Menu</a>
+          <button class="button button-outline" id="clear-cart" type="button">Clear Plate ×</button>
+        </div>
+        <p class="cart-disclaimer">
+          This is a menu-planning cart for the school mela, not an online payment system.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="footer-brand" href="index.html">Aao Kabhi Stall Pe! 🌶️</a>
+    <p>Made with ❤️ by Class 9E</p>
+    <div class="footer-links"><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="story.html">Story</a><a href="team.html">Team</a></div>
+    <small>School Mela Edition · Pet bhi khush, dil bhi khush!</small>
+  </footer>
+</body>
+</html>
