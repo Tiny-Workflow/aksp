@@ -2,536 +2,521 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aao Kabhi Stall Pe 🍔</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aao Kabhi Stall Pe!</title>
+  <style>
+    :root {
+      --red: #d92d20;
+      --yellow: #ffd447;
+      --cream: #fff8e8;
+      --dark: #292018;
+      --white: #ffffff;
+    }
 
-:root {
-  --red: #e8402b;
-  --dark: #38221c;
-  --yellow: #ffc845;
-  --cream: #fff7e8;
-  --green: #37875b;
-  --white: #fffdf8;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 85px; }
-body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--dark);
-  font-family: 'Baloo 2', sans-serif;
-  overflow-x: hidden;
-}
-button, a { font: inherit; }
-a { color: inherit; text-decoration: none; }
-button { cursor: pointer; }
-.top-note {
-  background: var(--dark);
-  color: white;
-  text-align: center;
-  padding: 7px;
-  font-size: 13px;
-  letter-spacing: 1px;
-}
-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: var(--cream);
-  border-bottom: 2px solid var(--dark);
-}
-.nav {
-  max-width: 1150px;
-  margin: auto;
-  padding: 12px 22px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-}
-.logo {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--red);
-}
-.logo span { color: var(--dark); }
-.links { display: flex; gap: 23px; align-items: center; }
-.links a { font-weight: 700; }
-.links a:hover { color: var(--red); }
-.plate-button, .primary {
-  background: var(--yellow);
-  border: 2px solid var(--dark);
-  border-radius: 12px;
-  padding: 9px 15px;
-  font-weight: 800;
-  box-shadow: 3px 3px 0 var(--dark);
-  transition: transform .15s, box-shadow .15s;
-}
-.plate-button:hover, .primary:hover {
-  transform: translate(2px,2px);
-  box-shadow: 1px 1px 0 var(--dark);
-}
-.plate-button { white-space: nowrap; }
-.hero {
-  max-width: 1150px;
-  min-height: 550px;
-  margin: auto;
-  padding: 70px 25px 65px;
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  align-items: center;
-  gap: 35px;
-}
-.eyebrow {
-  display: inline-block;
-  background: #dcebd8;
-  border: 1.5px solid var(--dark);
-  border-radius: 99px;
-  padding: 5px 13px;
-  font-weight: 800;
-  transform: rotate(-2deg);
-}
-h1, h2, h3, p { margin-top: 0; }
-h1 {
-  font-family: 'Fredoka', sans-serif;
-  font-size: clamp(48px, 6.5vw, 82px);
-  line-height: .98;
-  letter-spacing: -2px;
-  margin: 22px 0;
-}
-h1 .red { color: var(--red); }
-.hero-copy > p {
-  font-size: 19px;
-  max-width: 460px;
-  line-height: 1.5;
-}
-.hero-actions { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 27px; }
-.primary { background: var(--red); color: white; display: inline-block; }
-.secondary {
-  display: inline-block;
-  padding: 9px 15px;
-  border: 2px solid var(--dark);
-  border-radius: 12px;
-  font-weight: 800;
-}
-.art {
-  position: relative;
-  min-height: 370px;
-  display: grid;
-  place-items: center;
-}
-.sun {
-  position: absolute;
-  width: 290px; height: 290px;
-  border-radius: 50%;
-  background: var(--yellow);
-  border: 2px solid var(--dark);
-}
-.food {
-  position: relative;
-  font-size: clamp(100px, 15vw, 170px);
-  filter: drop-shadow(5px 7px 0 rgba(56,34,28,.13));
-  animation: float 3s ease-in-out infinite;
-  z-index: 2;
-}
-.food-small {
-  position: absolute;
-  font-size: 65px;
-  animation: float 3.5s ease-in-out infinite;
-}
-.food-small.one { top: 18px; right: 12px; transform: rotate(15deg); }
-.food-small.two { bottom: 10px; left: 5px; animation-delay: .8s; }
-.food-small.three { top: 80px; left: -12px; font-size: 42px; animation-delay: 1.1s; }
-.sticker {
-  position: absolute;
-  right: 0; bottom: 40px;
-  z-index: 3;
-  background: var(--red);
-  color: white;
-  border: 2px solid var(--dark);
-  border-radius: 50%;
-  width: 105px; height: 105px;
-  display: grid; place-items: center;
-  text-align: center;
-  line-height: 1.1;
-  font-weight: 800;
-  transform: rotate(12deg);
-}
-@keyframes float {
-  0%,100% { transform: translateY(0) rotate(-3deg); }
-  50% { transform: translateY(-13px) rotate(3deg); }
-}
-.marquee {
-  overflow: hidden;
-  background: var(--yellow);
-  border-top: 2px solid var(--dark);
-  border-bottom: 2px solid var(--dark);
-  white-space: nowrap;
-  padding: 12px 0;
-  font-family: 'Fredoka', sans-serif;
-  font-size: 21px;
-  font-weight: 700;
-}
-.marquee div { display: inline-block; animation: slide 24s linear infinite; }
-@keyframes slide { to { transform: translateX(-50%); } }
-section { padding: 75px 22px; }
-.section-inner { max-width: 1100px; margin: auto; }
-.section-head { text-align: center; margin-bottom: 35px; }
-.kicker {
-  color: var(--red);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-h2 {
-  font-family: 'Fredoka', sans-serif;
-  font-size: clamp(35px, 5vw, 52px);
-  line-height: 1.05;
-  margin: 10px 0;
-}
-.section-head p { font-size: 17px; }
-.menu-section { background: #fffdf8; }
-.filters {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 25px 0 32px;
-}
-.filter {
-  background: white;
-  border: 2px solid var(--dark);
-  border-radius: 99px;
-  padding: 7px 17px;
-  font-weight: 800;
-}
-.filter.active, .filter:hover { background: var(--dark); color: white; }
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-.menu-card {
-  border: 2px solid var(--dark);
-  border-radius: 19px;
-  overflow: hidden;
-  background: white;
-  box-shadow: 5px 5px 0 var(--dark);
-  transition: transform .2s;
-}
-.menu-card:hover { transform: translateY(-6px) rotate(-.5deg); }
-.food-picture {
-  height: 180px;
-  display: grid;
-  place-items: center;
-  font-size: 95px;
-  position: relative;
-}
-.food-picture span { animation: float 4s ease-in-out infinite; }
-.food-picture .tag {
-  position: absolute;
-  top: 12px; left: 12px;
-  background: white;
-  border: 1.5px solid var(--dark);
-  border-radius: 99px;
-  padding: 3px 10px;
-  font-size: 12px;
-  font-weight: 800;
-  animation: none;
-}
-.card-body { padding: 17px; }
-.card-body h3 { font: 700 23px 'Fredoka', sans-serif; margin-bottom: 5px; }
-.card-body p { color: #74635b; line-height: 1.4; min-height: 42px; margin-bottom: 15px; }
-.card-bottom { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-.price { font: 700 25px 'Fredoka', sans-serif; }
-.add {
-  background: var(--yellow);
-  border: 2px solid var(--dark);
-  border-radius: 10px;
-  padding: 7px 11px;
-  font-weight: 800;
-}
-.add:hover { background: #ffda72; }
-.empty { text-align: center; padding: 20px; }
-.about-section { background: #dcebd8; }
-.about-grid {
-  display: grid;
-  grid-template-columns: .9fr 1.1fr;
-  gap: 45px;
-  align-items: center;
-}
-.about-art {
-  background: var(--yellow);
-  border: 2px solid var(--dark);
-  border-radius: 25px;
-  min-height: 300px;
-  display: grid;
-  place-items: center;
-  font-size: 145px;
-  box-shadow: 7px 7px 0 var(--dark);
-}
-.about-copy p { font-size: 18px; line-height: 1.6; }
-.perks { display: grid; gap: 10px; margin-top: 20px; }
-.perk { font-weight: 800; }
-.final-cta {
-  text-align: center;
-  background: var(--red);
-  color: white;
-  padding: 65px 22px;
-}
-.final-cta h2 { max-width: 650px; margin: 0 auto 15px; }
-.final-cta p { font-size: 18px; }
-.final-cta .primary { background: var(--yellow); color: var(--dark); }
-footer {
-  background: var(--dark);
-  color: white;
-  text-align: center;
-  padding: 27px 15px;
-}
-footer strong { color: var(--yellow); }
-footer p { margin: 5px 0; }
-.toast {
-  position: fixed;
-  bottom: 20px; left: 50%;
-  transform: translate(-50%, 100px);
-  background: var(--dark); color: white;
-  border: 2px solid var(--yellow);
-  border-radius: 12px;
-  padding: 12px 20px;
-  z-index: 50;
-  transition: transform .3s;
-  text-align: center;
-  width: max-content;
-  max-width: 90%;
-}
-.toast.show { transform: translate(-50%, 0); }
-@media (max-width: 760px) {
-  .nav { flex-wrap: wrap; }
-  .links { order: 3; width: 100%; justify-content: center; gap: 25px; }
-  .hero { grid-template-columns: 1fr; text-align: center; padding-top: 48px; }
-  .hero-copy > p { margin-left: auto; margin-right: auto; }
-  .hero-actions { justify-content: center; }
-  .art { min-height: 300px; }
-  .sun { width: 240px; height: 240px; }
-  .menu-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-  .food-picture { height: 145px; font-size: 75px; }
-  .card-body { padding: 12px; }
-  .card-body h3 { font-size: 20px; }
-  .card-body p { font-size: 14px; min-height: 58px; }
-  .card-bottom { align-items: flex-start; flex-direction: column; }
-  .about-grid { grid-template-columns: 1fr; gap: 30px; }
-  .about-art { min-height: 220px; font-size: 110px; }
-}
-@media (max-width: 390px) {
-  .menu-grid { grid-template-columns: 1fr; }
-  .food-picture { height: 170px; }
-  .card-bottom { flex-direction: row; align-items: center; }
-  .links { gap: 15px; font-size: 14px; }
-  .logo { font-size: 19px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: .01ms !important; scroll-behavior: auto !important; }
-}
-</style>
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+    }
+
+    header {
+      background: var(--red);
+      color: white;
+      padding: 16px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      border-bottom: 5px solid var(--dark);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 1000;
+      letter-spacing: -1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    nav a:hover { color: var(--yellow); }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+      border: 3px solid var(--dark);
+      border-radius: 12px;
+      font-weight: 900;
+      transition: transform .2s;
+    }
+
+    button:hover { transform: translateY(-3px); }
+
+    .cart-button {
+      padding: 10px 15px;
+      background: var(--yellow);
+      color: var(--dark);
+    }
+
+    .hero {
+      padding: 75px 6%;
+      background: var(--yellow);
+      border-bottom: 5px solid var(--dark);
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 7vw, 5.5rem);
+      line-height: .98;
+      margin: 10px 0 20px;
+      letter-spacing: -3px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      max-width: 540px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      padding: 8px 13px;
+      border: 3px solid var(--dark);
+      border-radius: 50px;
+      font-weight: 900;
+      transform: rotate(-2deg);
+    }
+
+    .hero-art {
+      font-size: clamp(5rem, 14vw, 10rem);
+      text-align: center;
+      animation: bob 3s ease-in-out infinite;
+      filter: drop-shadow(5px 7px 0 rgba(41,32,24,.15));
+    }
+
+    .primary-button {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      padding: 14px 22px;
+      text-decoration: none;
+      border: 3px solid var(--dark);
+      border-radius: 12px;
+      font-weight: 900;
+      box-shadow: 4px 4px 0 var(--dark);
+      transition: transform .2s;
+    }
+
+    .primary-button:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 var(--dark);
+    }
+
+    section { padding: 60px 6%; }
+
+    .section-heading {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 0 0 10px;
+      letter-spacing: -1px;
+    }
+
+    .section-intro {
+      margin: 0 0 28px;
+      line-height: 1.6;
+    }
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 25px 0;
+    }
+
+    .filter-button {
+      padding: 9px 15px;
+      background: white;
+    }
+
+    .filter-button.active {
+      background: var(--red);
+      color: white;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .food-card {
+      background: white;
+      border: 3px solid var(--dark);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 5px 5px 0 var(--dark);
+      transition: transform .2s;
+      animation: appear .5s ease both;
+    }
+
+    .food-card:hover { transform: translateY(-6px) rotate(-.5deg); }
+
+    .food-art {
+      min-height: 145px;
+      display: grid;
+      place-items: center;
+      background: var(--yellow);
+      font-size: 5rem;
+      border-bottom: 3px solid var(--dark);
+    }
+
+    .food-info { padding: 17px; }
+
+    .food-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .food-top h3 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    .price {
+      color: var(--red);
+      font-size: 1.2rem;
+      font-weight: 1000;
+      white-space: nowrap;
+    }
+
+    .food-info p {
+      line-height: 1.55;
+      color: #62574b;
+      min-height: 75px;
+    }
+
+    .add-button {
+      width: 100%;
+      padding: 11px;
+      background: var(--yellow);
+    }
+
+    .about {
+      background: #ffe9db;
+      border-top: 5px solid var(--dark);
+      border-bottom: 5px solid var(--dark);
+    }
+
+    .about-content {
+      max-width: 800px;
+      line-height: 1.8;
+      font-size: 1.08rem;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 28px 6%;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    #toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(120px);
+      background: var(--dark);
+      color: white;
+      padding: 13px 20px;
+      border-radius: 12px;
+      z-index: 20;
+      transition: transform .3s;
+      max-width: 90%;
+      text-align: center;
+    }
+
+    #toast.show { transform: translateX(-50%) translateY(0); }
+
+    @keyframes bob {
+      0%, 100% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(-12px) rotate(3deg); }
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; padding-top: 50px; }
+      .hero-art { font-size: 6rem; }
+      .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 520px) {
+      header { justify-content: center; }
+      nav { justify-content: center; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .food-info p { min-height: auto; }
+      .hero h1 { letter-spacing: -2px; }
+    }
+  </style>
 </head>
+
 <body>
+  <header>
+    <div class="logo">🌶️ AAO KABHI STALL PE!</div>
 
-<div class="top-note">📍 SCHOOL MELA SPECIAL · FULL DESI SWAAD · ZERO BORING VIBES</div>
-
-<header>
-  <nav class="nav">
-    <a class="logo" href="#home">AAO KABHI<br><span>STALL PE!</span></a>
-    <div class="links">
+    <nav>
       <a href="#home">Home</a>
       <a href="#menu">Menu</a>
       <a href="#about">Our Story</a>
-    </div>
-    <button class="plate-button" onclick="showPlate()">🍽️ My Plate <span id="count">0</span></button>
-  </nav>
-</header>
+    </nav>
 
-<main>
-  <section class="hero" id="home">
-    <div class="hero-copy">
-      <span class="eyebrow">✨ BHOOKH LAGI? SCROLL KAR.</span>
-      <h1>Pet puja.<br><span class="red">Full desi</span><br>swag.</h1>
-      <p>Diet kal se. Aaj toh scene on hai! Pull up for the munchies, stay for the mast vibes. 😎</p>
-      <div class="hero-actions">
-        <a class="primary" href="#menu">Dekho menu →</a>
-        <a class="secondary" href="#about">Who's cooking? 👀</a>
+    <button class="cart-button" id="cartButton">
+      My Plate <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <span class="tag">DILLI WALI FEELING ✨</span>
+        <h1>Pet puja.<br>Full desi swag.</h1>
+        <p>
+          Bhookh lagi? Toh drama kyun?
+          Aao, kuch chatpata ho jaaye.
+          Swad aisa ki dil bole —
+          <strong>bhai, ek aur plate laga!</strong>
+        </p>
+        <a class="primary-button" href="#menu">Chalo, menu dekhein! →</a>
       </div>
-    </div>
-    <div class="art" aria-label="Cartoon burger with fries and a drink">
-      <div class="sun"></div>
-      <span class="food-small one">🍟</span>
-      <span class="food-small two">🥤</span>
-      <span class="food-small three">✨</span>
-      <span class="food">🍔</span>
-      <div class="sticker">100%<br>MASTI<br>MODE!</div>
-    </div>
-  </section>
 
-  <div class="marquee">
-    <div> ✦ KHAAO PIYO ✦ DOSTON KO BHI KHILAO ✦ FULL ON DESI ✦ PET BHARO, DIL JEETO ✦ KHAAO PIYO ✦ DOSTON KO BHI KHILAO ✦ FULL ON DESI ✦ PET BHARO, DIL JEETO ✦ </div>
-  </div>
+      <div class="hero-art" aria-label="Burger and fries">🍟 🌶️ ☕</div>
+    </section>
 
-  <section class="menu-section" id="menu">
-    <div class="section-inner">
-      <div class="section-head">
-        <span class="kicker">The main character menu</span>
-        <h2>Kya khaoge, boss? 👀</h2>
-        <p>Cravings sorted. Wallet-friendly. Vibe-certified.</p>
-      </div>
+    <section id="menu">
+      <h2 class="section-heading">Our Swad Factory 🤌</h2>
+      <p class="section-intro">
+        Budget apna, swag apna. Har bite mein thoda pyaar, thoda tadka!
+      </p>
 
       <div class="filters">
-        <button class="filter active" data-filter="all">Sab kuch ✨</button>
-        <button class="filter" data-filter="snacks">Snacks 🍟</button>
-        <button class="filter" data-filter="drinks">Drinks 🥤</button>
-        <button class="filter" data-filter="sweet">Sweet tooth 🍫</button>
+        <button class="filter-button active" data-filter="all">Sab Kuch</button>
+        <button class="filter-button" data-filter="snacks">Chatpata Corner</button>
+        <button class="filter-button" data-filter="drinks">Sip Sip Hooray</button>
+        <button class="filter-button" data-filter="sweet">Meetha Scene</button>
       </div>
 
       <div class="menu-grid" id="menuGrid">
-        <article class="menu-card" data-category="snacks">
-          <div class="food-picture" style="background:#ffe3b1"><span>🍔</span><span class="tag">CROWD FAV</span></div>
-          <div class="card-body">
-            <h3>Desi Burger</h3>
-            <p>Big bite energy. Full paisa vasool.</p>
-            <div class="card-bottom"><span class="price">₹40</span><button class="add" data-item="Desi Burger">Add +</button></div>
+        <article class="food-card" data-category="snacks">
+          <div class="food-art">🍟</div>
+          <div class="food-info">
+            <div class="food-top">
+              <h3>Chilli Potato</h3>
+              <span class="price">₹40</span>
+            </div>
+            <p>
+              Aloo ka international tour, Dilli ke tadke ke saath!
+              Crispy potato bites tossed in chatpati chilli magic —
+              ek baar khaoge, toh dil bolega, “thoda aur laana!”
+            </p>
+            <button class="add-button" data-name="Chilli Potato" data-price="40">Add +</button>
           </div>
         </article>
-        <article class="menu-card" data-category="snacks">
-          <div class="food-picture" style="background:#ffed92"><span>🍟</span><span class="tag">CRUNCH TIME</span></div>
-          <div class="card-body">
-            <h3>Masala Fries</h3>
-            <p>Crispy, spicy, gone in 0.2 seconds.</p>
-            <div class="card-bottom"><span class="price">₹30</span><button class="add" data-item="Masala Fries">Add +</button></div>
+
+        <article class="food-card" data-category="snacks">
+          <div class="food-art">🍝</div>
+          <div class="food-info">
+            <div class="food-top">
+              <h3>White Sauce Pasta</h3>
+              <span class="price">₹40</span>
+            </div>
+            <p>
+              Italy ki creamy ada aur apne desi dil ka milan!
+              Silky white sauce mein dooba pasta, har forkful mein
+              full-on comfort — paisa vasool, mood khushhaal.
+            </p>
+            <button class="add-button" data-name="White Sauce Pasta" data-price="40">Add +</button>
           </div>
         </article>
-        <article class="menu-card" data-category="drinks">
-          <div class="food-picture" style="background:#d4e8ff"><span>🥤</span><span class="tag">CHILL SCENE</span></div>
-          <div class="card-body">
-            <h3>Chill Sip</h3>
-            <p>A refreshing break from all that mela madness.</p>
-            <div class="card-bottom"><span class="price">₹20</span><button class="add" data-item="Chill Sip">Add +</button></div>
+
+        <article class="food-card" data-category="drinks">
+          <div class="food-art">🥤</div>
+          <div class="food-info">
+            <div class="food-top">
+              <h3>Cold Coffee</h3>
+              <span class="price">₹30</span>
+            </div>
+            <p>
+              Thandi coffee, creamy vibes aur tension ki chhutti!
+              Ek chilled sip jo garmi ko bole “bye-bye” —
+              apna mini café moment, woh bhi pocket-friendly price pe.
+            </p>
+            <button class="add-button" data-name="Cold Coffee" data-price="30">Add +</button>
           </div>
         </article>
-        <article class="menu-card" data-category="snacks">
-          <div class="food-picture" style="background:#ffdbc8"><span>🍕</span><span class="tag">CHEESE PLS</span></div>
-          <div class="card-body">
-            <h3>Pizza Pocket</h3>
-            <p>Small package. Massive cheesy energy.</p>
-            <div class="card-bottom"><span class="price">₹35</span><button class="add" data-item="Pizza Pocket">Add +</button></div>
+
+        <article class="food-card" data-category="snacks">
+          <div class="food-art">🥔</div>
+          <div class="food-info">
+            <div class="food-top">
+              <h3>Chip Chaat</h3>
+              <span class="price">₹30</span>
+            </div>
+            <p>
+              Wafer ka crunch, masalon ka punch aur chatpate flavours
+              ka full desi dance! Har bite mein khatta-meetha twist —
+              chips bhi bolein, “aaj toh hum chha gaye!”
+            </p>
+            <button class="add-button" data-name="Chip Chaat" data-price="30">Add +</button>
           </div>
         </article>
-        <article class="menu-card" data-category="sweet">
-          <div class="food-picture" style="background:#f6d5e8"><span>🍩</span><span class="tag">SUGAR RUSH</span></div>
-          <div class="card-body">
-            <h3>Choco Donut</h3>
-            <p>For the sweet tooth in the friend group.</p>
-            <div class="card-bottom"><span class="price">₹25</span><button class="add" data-item="Choco Donut">Add +</button></div>
+
+        <article class="food-card" data-category="sweet">
+          <div class="food-art">🍫</div>
+          <div class="food-info">
+            <div class="food-top">
+              <h3>Chocolates</h3>
+              <span class="price">₹10</span>
+            </div>
+            <p>
+              Chhota packet, badi khushi! Smooth chocolate ka
+              sweet sa scene jo har mood ko bana de mast —
+              kyunki khushiyon pe koi GST nahi lagta, boss.
+            </p>
+            <button class="add-button" data-name="Chocolates" data-price="10">Add +</button>
           </div>
         </article>
-        <article class="menu-card" data-category="sweet">
-          <div class="food-picture" style="background:#e1f0c9"><span>🍫</span><span class="tag">CHOCO MODE</span></div>
-          <div class="card-body">
-            <h3>Choco Bites</h3>
-            <p>One for you. Five for your bestie. Maybe.</p>
-            <div class="card-bottom"><span class="price">₹20</span><button class="add" data-item="Choco Bites">Add +</button></div>
+
+        <article class="food-card" data-category="sweet">
+          <div class="food-art">🍫</div>
+          <div class="food-info">
+            <div class="food-top">
+              <h3>Chocolate Wafers</h3>
+              <span class="price">₹10</span>
+            </div>
+            <p>
+              Crispy wafer ki layers aur chocolate ka pyaar —
+              crunch aisa ki dil kare ek aur bite maar!
+              Sweet tooth ka budget-friendly jackpot, ekdum jhakaas.
+            </p>
+            <button class="add-button" data-name="Chocolate Wafers" data-price="10">Add +</button>
           </div>
         </article>
       </div>
-      <p style="text-align:center;margin-top:28px;color:#74635b">Menu items and prices are sample placeholders — update them to match your actual stall.</p>
-    </div>
-  </section>
+    </section>
 
-  <section class="about-section" id="about">
-    <div class="section-inner about-grid">
-      <div class="about-art">👨🏽‍🍳🍔</div>
-      <div class="about-copy">
-        <span class="kicker">Namaste, foodies!</span>
-        <h2>Not just a stall.<br>It's a whole vibe.</h2>
-        <p>We're here to make your school mela a little tastier, a little crazier, and a whole lot more fun. Good food, good friends, and memories worth talking about long after the last bell.</p>
-        <p>Come with your gang. Bring your appetite. Leave with a smile. ❤️</p>
-        <div class="perks">
-          <div class="perk">🌶️ &nbsp; Full desi energy</div>
-          <div class="perk">🤝 &nbsp; Friends eat together</div>
-          <div class="perk">🎉 &nbsp; Mela memories unlocked</div>
-        </div>
+    <section class="about" id="about">
+      <h2 class="section-heading">Apni Dilli, Apna Swad ❤️</h2>
+      <div class="about-content">
+        <p>
+          Hum hain <strong>Aao Kabhi Stall Pe!</strong> —
+          jahaan milta hai desi swag, mast vibes aur pocket-friendly
+          treats. School mela ho ya doston ke saath chill scene,
+          humara funda simple hai: pet khush, dil khush!
+        </p>
+        <p>
+          Toh doston ko bulao, bhookh ko jagao aur bol do —
+          <strong>“Aao kabhi stall pe!”</strong> 😎
+        </p>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <section class="final-cta">
-    <h2>Ab itna scroll kiya hai toh aana bhi. 😤</h2>
-    <p>Your gang is waiting. Your cravings are calling.</p>
-    <a href="#menu" class="primary">Chalo, menu pe! →</a>
-  </section>
-</main>
+  <footer>
+    <strong>AAO KABHI STALL PE! 🌶️</strong><br>
+    Pet puja, full desi swag.<br>
+    © <span id="year"></span> Aao Kabhi Stall Pe. Made with ❤️ and extra masala.
+  </footer>
 
-<footer>
-  <p><strong>AAO KABHI STALL PE!</strong> 🍔</p>
-  <p>Made with ❤️, snacks & school-mela madness.</p>
-  <p>© <span id="year"></span> · See you at the stall!</p>
-</footer>
+  <div id="toast" role="status" aria-live="polite"></div>
 
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    const plate = [];
+    const cartCount = document.getElementById("cartCount");
+    const toast = document.getElementById("toast");
+    const cartButton = document.getElementById("cartButton");
 
-<script>
-let plate = [];
-let toastTimer;
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-document.getElementById('year').textContent = new Date().getFullYear();
+    let toastTimeout;
 
-function notify(message) {
-  const toast = document.getElementById('toast');
-  toast.textContent = message;
-  toast.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove('show'), 2400);
-}
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => toast.classList.remove("show"), 2500);
+    }
 
-document.querySelectorAll('.add').forEach(button => {
-  button.addEventListener('click', () => {
-    plate.push(button.dataset.item);
-    document.getElementById('count').textContent = plate.length;
-    notify('Added ' + button.dataset.item + '! Plate total: ' + plate.length + ' 🍽️');
-  });
-});
+    document.querySelectorAll(".add-button").forEach(button => {
+      button.addEventListener("click", () => {
+        plate.push({
+          name: button.dataset.name,
+          price: Number(button.dataset.price)
+        });
 
-document.querySelectorAll('.filter').forEach(button => {
-  button.addEventListener('click', () => {
-    document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
-    button.classList.add('active');
-
-    const category = button.dataset.filter;
-    document.querySelectorAll('.menu-card').forEach(card => {
-      card.hidden = category !== 'all' && card.dataset.category !== category;
+        cartCount.textContent = plate.length;
+        showToast(button.dataset.name + " added to your plate! 😋");
+      });
     });
-  });
-});
 
-function showPlate() {
-  if (plate.length === 0) {
-    notify('Your plate is empty, boss! Add something from the menu. 😋');
-    return;
-  }
+    cartButton.addEventListener("click", () => {
+      if (plate.length === 0) {
+        showToast("Arre bhai, pehle kuch toh add karo! 😭");
+        return;
+      }
 
-  const summary = plate.reduce((result, item) => {
-    result[item] = (result[item] || 0) + 1;
-    return result;
-  }, {});
+      const total = plate.reduce((sum, item) => sum + item.price, 0);
+      const items = plate.map(item => item.name).join(", ");
 
-  const details = Object.entries(summary)
-    .map(([item, quantity]) => item + ' × ' + quantity)
-    .join(', ');
+      showToast(items + " | Total: ₹" + total);
+    });
 
-  notify('Your plate: ' + details);
-}
-</script>
+    document.querySelectorAll(".filter-button").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".filter-button").forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+
+        document.querySelectorAll(".food-card").forEach(card => {
+          card.style.display =
+            filter === "all" || card.dataset.category === filter
+              ? ""
+              : "none";
+        });
+      });
+    });
+  </script>
 </body>
 </html>
